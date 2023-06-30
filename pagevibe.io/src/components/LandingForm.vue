@@ -41,6 +41,8 @@ export default {
       setTimeout(() => {
         this.loading = false
         this.loaded = true
+
+        this.$router.push('/feedback')
       }, 2000)
     },
   },
