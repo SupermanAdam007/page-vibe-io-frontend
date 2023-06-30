@@ -19,7 +19,7 @@
       </v-row>
 
 
-      <v-img height="500" src="@/assets/Mobile testing-amico.svg" />
+      <v-img height="500" src="@/assets/Mobiletesting-amico.svg" />
     </v-responsive>
   </v-container>
 </template>
