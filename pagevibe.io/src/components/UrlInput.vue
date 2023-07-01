@@ -1,0 +1,50 @@
+<template>
+  <v-text-field v-model="url" :loading="loading" :rules="urlRules" elevation="6" density="compact" variant="solo" label="Enter URL" append-inner-icon="mdi-magnify" single-line hide-details
+    @click:append-inner="onClick" v-on:keyup.enter="onClick">
+    <template v-slot:prepend-inner>
+      https://
+    </template>
+  </v-text-field>
+</template>
+
+<script>
+import { mapWritableState } from 'pinia'
+import { useAppStore } from '@/store/app'
+
+export default {
+  data() {
+    return {
+      loading: false,
+      urlRules: [
+        (value) => !!value || "Required.",
+        (value) => this.isURL(`https://${value}`) || "URL is not valid",
+      ],
+    }
+  },
+  computed: {
+    ...mapWritableState(useAppStore, ['url']),
+  },
+  methods: {
+    isURL(str) {
+      var res = str.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+      return (res !== null)
+    },
+    onClick() {
+      this.url = this.url.replace('http://', '')
+      this.url = this.url.replace('https://', '')
+      
+      if (!this.isURL(`https://${this.url}`)) return
+
+      this.loading = true
+
+      setTimeout(() => {
+        this.loading = false
+
+        this.$router.push(`/feedback?url=https://${this.url}`)
+      }, 2000)
+    },
+  },
+}
+</script>
+
+<style></style>

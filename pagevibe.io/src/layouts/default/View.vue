@@ -4,6 +4,10 @@
   </v-main>
 </template>
 
-<script setup>
-  //
+<script>
+  export default {
+    mounted(){
+      // console.log(this.$route);
+    }
+  }
 </script>

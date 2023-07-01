@@ -4,7 +4,7 @@
 
     <default-view />
 
-    <default-footer />
+    <!-- <default-footer /> -->
   </v-app>
 </template>
 
