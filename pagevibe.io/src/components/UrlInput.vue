@@ -1,8 +1,8 @@
 <template>
   <v-text-field v-model="url" :loading="loading" :rules="urlRules" elevation="6" density="compact" variant="solo" label="Enter URL" append-inner-icon="mdi-magnify" single-line hide-details
-    @click:append-inner="onClick" v-on:keyup.enter="onClick">
+    @click:append-inner="onClick" v-on:keyup.enter="onClick" type="url">
     <template v-slot:prepend-inner>
-      https://
+      <span style="color:rgb(129, 129, 129)">https://</span>
     </template>
   </v-text-field>
 </template>
@@ -32,7 +32,8 @@ export default {
     onClick() {
       this.url = this.url.replace('http://', '')
       this.url = this.url.replace('https://', '')
-      
+      // this.url = this.url.replace('www.', '')
+
       if (!this.isURL(`https://${this.url}`)) return
 
       this.loading = true

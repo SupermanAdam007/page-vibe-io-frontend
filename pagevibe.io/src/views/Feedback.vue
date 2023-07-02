@@ -29,8 +29,5 @@ export default {
   computed: {
     ...mapState(useAppStore, ['url', 'persona', 'qas']),
   },
-  mounted() {
-    this.url = this.$route.query.url
-  },
 }
 </script>
