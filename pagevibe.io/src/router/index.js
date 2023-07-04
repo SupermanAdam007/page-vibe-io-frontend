@@ -14,7 +14,12 @@ const routes = [
       {
         path: '/feedback',
         name: 'Feedback',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Feedback.vue'),
+        component: () => import(/* webpackChunkName: "feedback" */ '@/views/Feedback.vue'),
+      },
+      {
+        path: '/personas',
+        name: 'Personas',
+        component: () => import(/* webpackChunkName: "personas" */ '@/views/Personas.vue'),
       },
     ],
   },

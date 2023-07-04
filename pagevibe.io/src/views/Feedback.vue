@@ -6,7 +6,7 @@
       </v-col>
     </v-row>
 
-    <VirtualPersonaCard class="mb-8" :avatar="persona.avatar" :name="persona.name" :description="persona.description" />
+    <PersonaCard class="mb-8" :avatar="persona.avatar" :name="persona.name" :description="persona.description" />
 
     <h1>Feedback</h1>
     <div>
@@ -16,18 +16,24 @@
 </template>
 
 <script>
-import { mapState } from 'pinia'
+import { mapState, mapActions } from 'pinia'
 import { useAppStore } from '@/store/app'
 
-import VirtualPersonaCard from '@/components/VirtualPersonaCard.vue';
+import PersonaCard from '@/components/PersonaCard.vue';
 import TextFeedback from '@/components/TextFeedback.vue'
 import UrlInput from '@/components/UrlInput.vue'
 
 
 export default {
-  components: { VirtualPersonaCard, TextFeedback, UrlInput },
+  components: { PersonaCard, TextFeedback, UrlInput },
   computed: {
     ...mapState(useAppStore, ['url', 'persona', 'qas']),
   },
+  methods: {
+    ...mapActions(useAppStore, ['fetchConstants']),
+  },
+  mounted() {
+    this.fetchConstants()
+  }
 }
 </script>

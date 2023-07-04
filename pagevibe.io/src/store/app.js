@@ -4,11 +4,7 @@ import { defineStore } from 'pinia'
 export const useAppStore = defineStore('app', {
   state: () => ({
     url: "",
-    persona: {
-      avatar: '/Thinking face-rafiki.png',
-      name: 'John Doe',
-      description: 'John is a single 31-year-old content manager. His main goals are to enjoy a healthy diet and lifestyle while working from home, and to have all the information he needs to be able to find and order healthy takeaway meals.',
-    },
+    selectedPersona: {},
     qas: [
       {
         question: "How would you rate the overall user experience of the website?",
@@ -38,6 +34,29 @@ export const useAppStore = defineStore('app', {
         question: "What do you like?",
         answer: "The emphasis on maximizing resource utilization within a company, such as office spaces, parking spots, company cars, and shared items."
       },
-    ]
+    ],
+    predefined_decision_making_factors: [],
+    predefined_communication_style: [],
+    predefined_user_experience_expectations: {},
+    predefined_personas: [],
+    predefined_questions: [],
   }),
+  actions: {
+    async fetchConstants() {
+        fetch('http://localhost:8000/personas/constants/')
+          .then(response => response.json())
+          .then(data => {
+            this.predefined_decision_making_factors = data.predefined_decision_making_factors
+            this.predefined_communication_style = data.predefined_communication_style
+            this.predefined_user_experience_expectations = data.predefined_user_experience_expectations
+            this.predefined_personas = data.predefined_personas
+            this.predefined_questions = data.predefined_questions
+
+            this.selectedPersona = this.predefined_personas[0]
+          })
+    },
+    selectPredefinedPersona(persona) {
+      this.selectedPersona = persona
+    }
+  }
 })
