@@ -1,32 +1,30 @@
 <template>
-  <v-card :elevation="6" @click="onClick">
+  <v-card :elevation="6" @click="onClick" style="max-width: 1000px;">
     <v-row no-gutters class="align-center justify-center">
       <v-col cols="auto">
-        <v-img :src="persona.avatar" class="mx-auto" height="300px" width="300px" :alt="'Avatar-' + persona.name" cover />
+        <div class="text-center pb-1" style="background-color: #3ce36ead; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+            <v-card-title class="pb-0 pt-1" style="line-height: 1.5rem;">{{ persona.name }} · {{ persona.occupation }}</v-card-title>
+            <v-card-subtitle class="pb-0">Age: {{ persona.age }}, Gender: {{ persona.gender }}</v-card-subtitle>
+          </div>
+        <v-img :src="persona.avatar" width="300px" :alt="'Avatar-' + persona.name" cover style="margin-bottom: -10px; " />
       </v-col>
-      <v-col cols="12" sm="8">
-        <v-card-title class="pb-0">{{ persona.name }} · {{ persona.occupation }}</v-card-title>
-        <!-- <v-card-text>
-        </v-card-text> -->
-        <v-list :lines="false" density="compact" class="pt-0">
+      <v-col cols="12" md="8" class="pl-2 pr-2 pl-sm-12">
+
+        <h4 class="mt-4">"{{ persona.description }}"</h4>
+
+        <v-list :lines="false" density="compact" class="pt-2">
           <v-list-item>
-            <!-- <v-list-item-title style="font-size: small;">Age: {{ persona.age }}</v-list-item-title>
-              <v-list-item-title style="font-size: small;">Gender: {{ persona.gender }}</v-list-item-title>
-              <v-list-item-title style="font-size: small;">Education: {{ persona.education_level }}</v-list-item-title>
-              <v-list-item-title style="font-size: small;">Income: {{ persona.income_level }}</v-list-item-title>
-              <v-list-item-title style="font-size: small;">Tech knowledge: {{ persona.tech_proficiency }}</v-list-item-title> -->
-            <v-list-item-title style="font-size: small;">Age: {{ persona.age }}, Gender: {{ persona.gender }} </v-list-item-title>
-            <v-list-item-title style="font-size: small;">
-              <div class="mt-1">Education ({{ persona.education_level }}):</div>
-              <v-slider class="pb-1" readonly hide-details density="compact" color="primary" :model-value="persona.education_level * 10"></v-slider>
+            <v-list-item-title>
+              <h5>Education ({{ persona.education_level }})</h5>
+              <v-slider class="pb-1 mt-n2" readonly hide-details density="compact" color="primary" :model-value="persona.education_level * 10" style="height: 30px; max-width: 500px;"></v-slider>
             </v-list-item-title>
-            <v-list-item-title style="font-size: small;">
-              <div class="mt-1">Income ({{ persona.income_level }}):</div>
-              <v-slider class="pb-1" readonly hide-details color="primary" :model-value="persona.income_level * 10"></v-slider>
+            <v-list-item-title>
+              <h5>Income ({{ persona.income_level }})</h5>
+              <v-slider class="pb-1 mt-n2" readonly hide-details color="primary" :model-value="persona.income_level * 10" style="height: 30px; max-width: 500px;"></v-slider>
             </v-list-item-title>
-            <v-list-item-title style="font-size: small;">
-              <div class="mt-1">Tech knowledge ({{ persona.tech_proficiency }}):</div>
-              <v-slider class="pb-1" readonly hide-details color="primary" :model-value="persona.tech_proficiency * 10"></v-slider>
+            <v-list-item-title>
+              <h5>Tech knowledge ({{ persona.tech_proficiency }})</h5>
+              <v-slider class="pb-1 mt-n2" readonly hide-details color="primary" :model-value="persona.tech_proficiency * 10" style="height: 30px; max-width: 500px;"></v-slider>
             </v-list-item-title>
           </v-list-item>
         </v-list>
@@ -48,7 +46,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'pinia'
+import { mapActions } from 'pinia'
 import { useAppStore } from '@/store/app'
 
 export default {

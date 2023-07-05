@@ -20,7 +20,9 @@ export default defineConfig({
       },
     }),
   ],
-  define: { 'process.env': {} },
+  define: { 
+    'process.env': {}
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -38,4 +40,9 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  build: {
+    define: {
+      'process.env.VITE_API_HOST': JSON.stringify(process.env.VITE_API_HOST) || "http://localhost:8000"
+    }
+  }
 })
