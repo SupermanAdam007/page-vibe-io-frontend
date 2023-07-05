@@ -11,29 +11,29 @@
 
     <h2>How can You utilize PageVibe.io?</h2>
     <p>PageVibe.io is the best place to get feedback from virtual UX personas due to its unique and valuable features. It provides a platform where users can interact with realistic virtual personas
-      that simulate real-world user experiences. Here's why Pagevibe.io is important and why people should consider investing in its services:</p>
+      that simulate real-world user experiences. Here's why PageVibe.io is important and why people should consider investing in its services:</p>
 
-    <li><strong>Realistic User Feedback:</strong> Pagevibe.io offers virtual UX personas that mimic real users, allowing businesses to obtain more authentic and reliable feedback. This feedback helps
+    <li><strong>Realistic User Feedback:</strong> PageVibe.io offers virtual UX personas that mimic real users, allowing businesses to obtain more authentic and reliable feedback. This feedback helps
       identify potential
       user pain points, usability issues, and areas for improvement in a product or website.</li>
 
-    <li><strong>Cost-Effective Solution:</strong> By using virtual UX personas on Pagevibe.io, businesses can save time and resources compared to conducting in-person user testing or hiring individual
+    <li><strong>Cost-Effective Solution:</strong> By using virtual UX personas on PageVibe.io, businesses can save time and resources compared to conducting in-person user testing or hiring individual
       UX testers. It
       provides a cost-effective alternative that still delivers valuable insights for UX optimization.</li>
 
-    <li><strong>Diverse User Demographics:</strong> Pagevibe.io offers a wide range of virtual personas representing various user demographics, including age, gender, occupation, and interests. This
+    <li><strong>Diverse User Demographics:</strong> PageVibe.io offers a wide range of virtual personas representing various user demographics, including age, gender, occupation, and interests. This
       diversity ensures
       that businesses can gather feedback from different user perspectives, enhancing the inclusivity and user-friendliness of their products.</li>
 
-    <li><strong>Customization and Control:</strong> Users of Pagevibe.io have the flexibility to customize and control various aspects of the virtual personas, such as defining specific tasks,
+    <li><strong>Customization and Control:</strong> Users of PageVibe.io have the flexibility to customize and control various aspects of the virtual personas, such as defining specific tasks,
       scenarios, or user
       journeys for testing. This level of customization allows for targeted feedback and testing of specific features or user flows.</li>
 
-    <li><strong>Efficiency and Scalability:</strong> With Pagevibe.io, businesses can conduct UX testing and receive feedback at any time, without being limited by geographical constraints or scheduling
+    <li><strong>Efficiency and Scalability:</strong> With PageVibe.io, businesses can conduct UX testing and receive feedback at any time, without being limited by geographical constraints or scheduling
       conflicts. This
       scalability and efficiency make it easier to gather feedback quickly and iteratively throughout the development process.</li>
 
-    <li><strong>Improved User Experience:</strong> By leveraging the feedback received through Pagevibe.io, businesses can enhance their products or websites, leading to a better user experience. This,
+    <li><strong>Improved User Experience:</strong> By leveraging the feedback received through PageVibe.io, businesses can enhance their products or websites, leading to a better user experience. This,
       in turn, can
       increase user satisfaction, engagement, and ultimately contribute to the success of the business.</li>
 
