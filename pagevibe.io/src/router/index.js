@@ -26,6 +26,11 @@ const routes = [
         name: 'Info',
         component: () => import(/* webpackChunkName: "info" */ '@/views/Info.vue'),
       },
+      {
+        path: '/cookiepolicy',
+        name: 'CookiePolicy',
+        component: () => import(/* webpackChunkName: "cookiepolicy" */ '@/views/CookiePolicy.vue'),
+      },
     ],
   },
 ]
