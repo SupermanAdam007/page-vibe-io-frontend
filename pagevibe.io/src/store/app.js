@@ -4,6 +4,7 @@ import { useStorage } from "@vueuse/core";
 export const useAppStore = defineStore("app", {
   state: () => ({
     loading: false,
+    loadingConstants: false,
     url: useStorage("url", ""),
     selectedPersona: useStorage("selectedPersona", {}),
     questions: useStorage("questions", []),
@@ -31,6 +32,8 @@ export const useAppStore = defineStore("app", {
       this.selectedPersona = persona;
     },
     async fetchConstants() {
+      this.loadingConstants = true
+
       fetch(`${import.meta.env.VITE_API_HOST}/constants`)
         .then((response) => response.json())
         .then((data) => {
@@ -46,6 +49,8 @@ export const useAppStore = defineStore("app", {
           if (Object.keys(this.selectedPersona).length === 0) {
             this.selectedPersona = this.predefined_personas[0];
           }
+
+          this.loadingConstants = false
         });
     },
     async submitUrl() {

@@ -1,11 +1,11 @@
 <template>
   <v-card :elevation="6" @click="onClick" style="max-width: 1000px;">
-    <v-row no-gutters class="align-center justify-center">
+    <v-row v-if="!loadingConstants" no-gutters class="align-center justify-center">
       <v-col cols="auto">
         <div class="text-center pb-1" style="background-color: #3ce36ead; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
-            <v-card-title class="pb-0 pt-1" style="line-height: 1.5rem;">{{ persona.name }} · {{ persona.occupation }}</v-card-title>
-            <v-card-subtitle class="pb-0">Age: {{ persona.age }}, Gender: {{ persona.gender }}</v-card-subtitle>
-          </div>
+          <v-card-title class="pb-0 pt-1" style="line-height: 1.5rem;">{{ persona.name }} · {{ persona.occupation }}</v-card-title>
+          <v-card-subtitle class="pb-0">Age: {{ persona.age }}, Gender: {{ persona.gender }}</v-card-subtitle>
+        </div>
         <v-img :src="persona.avatar" width="300px" :alt="'Avatar-' + persona.name" cover style="margin-bottom: -10px; " />
       </v-col>
       <v-col cols="12" md="8" class="pl-2 pr-2 pl-sm-12">
@@ -41,17 +41,23 @@
       </v-col>
     </v-row>
 
+    <div v-else style="width: 100%" class="text-center">
+      <v-progress-circular color="primary" class="ma-8" :size="100" :width="12" indeterminate></v-progress-circular>
+    </div>
 
   </v-card>
 </template>
 
 <script>
-import { mapActions } from 'pinia'
+import { mapState, mapActions } from 'pinia'
 import { useAppStore } from '@/store/app'
 
 export default {
   props: {
     persona: Object,
+  },
+  computed: {
+    ...mapState(useAppStore, ['loadingConstants'])
   },
   methods: {
     ...mapActions(useAppStore, ['selectPredefinedPersona']),

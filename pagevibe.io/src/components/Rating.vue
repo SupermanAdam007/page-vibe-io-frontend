@@ -5,11 +5,10 @@
       color="primary"
       :size="100"
       :width="12"
-      :rotate="-90"
       :model-value="normalizedScore"
       :indeterminate="loading"
     >
-      <div class="score">{{ score }}</div>
+      <div v-show="!loading" class="score">{{ score }}</div>
     </v-progress-circular>
   </div>
 </template>

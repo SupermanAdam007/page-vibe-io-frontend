@@ -11,7 +11,7 @@
         <PersonaCard class="mx-auto" :persona="selectedPersona" />
       </v-col>
     </v-row>
-
+    
     <h1 class="mt-4">Rating</h1>
     <p class="mb-2 mt-n2" style="font-size: small;">Not personalized (<a target="_blank" href="/info">read more</a>)</p>
     <v-row no-gutters class="align-center justify-center mb-4">
@@ -53,7 +53,9 @@ export default {
     ...mapActions(useAppStore, ['fetchConstants']),
   },
   mounted() {
-    this.fetchConstants()
+    if (Object.keys(this.selectedPersona).length === 0) {
+      this.fetchConstants()
+    }
   }
 }
 </script>
