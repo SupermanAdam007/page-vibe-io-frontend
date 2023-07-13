@@ -1,10 +1,14 @@
 <template>
-  <v-text-field v-model="url" :loading="loading" :rules="urlRules" elevation="6" density="compact" variant="solo" label="Enter URL" append-inner-icon="mdi-magnify" single-line hide-details
-    @click:append-inner="onClick" v-on:keyup.enter="onClick" type="url">
-    <template v-slot:prepend-inner>
-      <span style="color:rgb(129, 129, 129)">https://</span>
-    </template>
-  </v-text-field>
+  <div>
+    <v-text-field v-model="url" :loading="loading" :rules="urlRules" elevation="6" density="compact" variant="solo" label="Enter URL" append-inner-icon="mdi-magnify" single-line hide-details
+      @click:append-inner="onClick" v-on:keyup.enter="onClick" type="url">
+      <template v-slot:prepend-inner>
+        <span style="color:rgb(129, 129, 129)">https://</span>
+      </template>
+    </v-text-field>
+
+    <v-alert v-if="errorMessage" type="error" title="Unable to process" :text="errorMessage" variant="tonal"></v-alert>
+  </div>
 </template>
 
 <script>
@@ -22,7 +26,7 @@ export default {
     }
   },
   computed: {
-    ...mapWritableState(useAppStore, ['url']),
+    ...mapWritableState(useAppStore, ['url', 'errorMessage']),
   },
   mounted() {
     if (this.$route.query.url !== undefined) {
